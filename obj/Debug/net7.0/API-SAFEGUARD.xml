@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API-SAFEGUARD</name>
+    </assembly>
+    <members>
+        <member name="M:API_SAFEGUARD.Controllers.ColaboradorController.GetColaboradors">
+            <summary>
+              Retorna todos dados da EPIs registradas
+            </summary>
+             <remarks>Exemplo de retorno:
+              {
+                 "idColaborador": 0, ---> Id do colaborador
+                 "nomeColaborador": "string", -->  Nome completo do colaborador
+                 "ctps": 0, --> Numero da carteira de trabalho do colaborador
+                 "dataDeAdmisao": "2024-04-25", --> Data de admisao do colaborador na empresa
+                 "telefone": 0, --> Numero de telefone do colaborador
+                 "cpf": 0, -->  CPF do colaborador
+                 "tipoFuncionario": "string",  --> Tipo de funcionario 
+                 "email": "string" -->  Email do colaborador
+                 }</remarks>
+             
+             <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.ColaboradorController.GetColaborador(System.Int32)">
+            <summary>
+              Retorna os dados de um colaborador especificp
+             </summary>
+             <remarks>Exemplo de retorno:
+              {
+                 "idColaborador": 0, ---> Id do colaborador que vai ser retornado
+                 "nomeColaborador": "string", -->  Nome completo do colaborador
+                 "ctps": 0, --> Numero da carteira de trabalho do colaborador
+                 "dataDeAdmisao": "2024-04-25", --> Data de admisao do colaborador na empresa
+                 "telefone": 0, --> Numero de telefone do colaborador
+                 "cpf": 0, -->  CPF do colaborador
+                 "tipoFuncionario": "string",  --> Tipo de funcionario 
+                 "email": "string" -->  Email do colaborador
+                }
+             COLOQUE NO CAMPO REQUISITADO {idColaborador} o ID DO COLABORADOR QUE VAI SER BUSCADO </remarks>
+             
+             <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.ColaboradorController.PutColaborador(System.Int32,API_SAFEGUARD.Models.Colaborador)">
+            <summary>
+              Atualiza e altera os dados de um campo ja existente num banco de dados
+             </summary>
+             <remarks>Exemplo de retorno:
+              {
+                 "idColaborador": 0, ---> Campo do tipo numerico inteiro que representa o ID do Colaborador (insira o mesmo id da requisição)
+                 "nomeColaborador": "string", -->  Campo do tipo string do nome completo do colaborador
+                 "ctps": 0, --> Campo do tipo numerico do numero da carteira de trabalho do colaborador
+                 "dataDeAdmisao": "2024-04-25", --> Campo do tipo numerico da data de admisao do colaborador na empresa
+                 "telefone": 0, --> Campo do tipo numerico do numero de telefone do colaborador
+                 "cpf": 0, -->  Campo do tipo numerico do CPF do colaborador
+                 "tipoFuncionario": "string",  --> Tipo de funcionario 
+                 "email": "string" -->  Campo do tipo String do Email do colaborador
+            }
+             
+             COLOQUE NO CAMPO  REQUISITADO {IdColaborador}  O ID DO COLABORADOR QUE VAI SER ALTERADO E OS DADOS A SEREM ALTERADOS 
+             </remarks>
+             <response code = "200">Retornado quando a atualização é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.ColaboradorController.PostColaborador(API_SAFEGUARD.Models.Colaborador)">
+            <summary>
+              Adiciona novos dados  no banco de dados
+             </summary>
+             <remarks>
+              Exemplo de retorno:
+              {
+                 "idColaborador": 0, ---> Campo do tipo numerico inteiro que representa o ID do Colaborador (insira um valor não existente, ou deixe vazio)
+                 "nomeColaborador": "string", -->  Campo do tipo string do nome completo do colaborador
+                 "ctps": 0, --> Campo do tipo numerico do numero da carteira de trabalho do colaborador
+                 "dataDeAdmisao": "2024-04-25", --> Campo do tipo numerico da data de admisao do colaborador na empresa
+                 "telefone": 0, --> Campo do tipo numerico do numero de telefone do colaborador
+                 "cpf": 0, -->  Campo do tipo numerico do CPF do colaborador
+                 "tipoFuncionario": "string",  --> Tipo de funcionario 
+                 "email": "string" -->  Campo do tipo String do Email do colaborador
+             }
+             
+             COLOQUE NO CAMPO  REQUISITADO {IdColaborador}  O ID DO COLABORADOR QUE VAI SER ALTERADO E OS DADOS A SEREM ALTERADOS 
+             </remarks>
+             <response code = "200">Retornado quando o dado é adicionado com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.ColaboradorController.DeleteColaborador(System.Int32)">
+            <summary>
+            Deleta  um registro especifico do banco de dados
+            </summary>
+            <remarks>O item do id inserido será deletado para sempre sem possibilidade de recuperaçao, tome cuidado</remarks>
+            <response  code="200">Retorna uma mensagem de que foi excluído com sucesso.</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EntregaController.GetEntregas">
+            <summary>
+              Retorna todos dados das entregas registradas
+             </summary>
+             <remarks>
+              Exemplo de retorno:
+               {
+                 "idEntrega": 0, ---> Id da entrega enviada
+                 "idColaborador": 0, --->  Identificação do colaborador que recebeu a entreha
+                 "idEpi": 0, --->  Identificação do EPI entregada
+                 "dataDeEntrega": "2024-04-25", ---> Data em que foi realizada a entrega
+                 "validade": "2024-04-25" ---> Validade do EPI
+               }
+             </remarks>
+             <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EntregaController.GetEntrega(System.Int32)">
+            <summary>
+              Retorna todos dados de  uma entrega específica pelo seu id
+             </summary>
+             <remarks>
+              Exemplo de retorno:
+               {
+                 "idEntrega": 0, ---> Id da entrega enviada  (mesmo valor passado na chamada)
+                 "idColaborador": 0, --->  Identificação do colaborador que recebeu a entreha
+                 "idEpi": 0, --->  Identificação do EPI entregada
+                 "dataDeEntrega": "2024-04-25", ---> Data em que foi realizada a entrega
+                 "validade": "2024-04-25" ---> Validade do EPI
+               }
+               COLOQUE NO CAMPO REQUISITADO {id} O ID DA ENTREGA QUE DESEJA SER RETORNADA
+               </remarks>
+             
+             <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EntregaController.PutEntrega(System.Int32,API_SAFEGUARD.Models.Entrega)">
+            <summary>
+              Atualiza os dados  de uma entrega já existente no banco de dados   
+             </summary>
+             <remarks>
+              Exemplo de retorno:
+               {
+                 "idEntrega": 0, ---> Campo do tipo numerico do Id da entrega enviada  (mesmo valor passado na chamada)
+                 "idColaborador": 0, --->  Campo do tipo numerico da Identificação do colaborador que recebeu a entrega(ID referente a api colaborador, insira um id que exista)
+                 "idEpi": 0, --->  Campo do tipo numerico da Identificação do EPI entregada(referente a api dos EPIs, , insira um id que exista)
+                 "dataDeEntrega": "2024-04-25", ---> Data em que foi realizada a entrega
+                 "validade": "2024-04-25" ---> Validade do EPI
+               }
+               COLOQUE NO CAMPO REQUISITADO {id} O ID DA ENTREGA QUE DESEJA SER RETORNADA
+               </remarks>
+             
+             <response code = "200">Retornado quando a atualização é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EntregaController.PostEntrega(API_SAFEGUARD.Models.Entrega)">
+            <summary>
+              Adiciona novos  dados de uma entrega no banco de dados
+             </summary>
+             <remarks>
+              Exemplo de retorno:
+               {
+                 "idEntrega": 0, ---> Campo do tipo numerico do Id da entrega enviada  (insira um valor não existente ou deixe vazio)
+                 "idColaborador": 0, --->  Campo do tipo numerico da Identificação do colaborador que recebeu a entrega(ID referente a api colaborador, , insira um id que exista)
+                 "idEpi": 0, --->  Campo do tipo numerico da Identificação do EPI entregada(referente a api dos EPIs, , insira um id que exista)
+                 "dataDeEntrega": "2024-04-25", ---> Data em que foi realizada a entrega
+                 "validade": "2024-04-25" ---> Validade do EPI
+               }
+               COLOQUE NO CAMPO REQUISITADO {id} O ID DA ENTREGA QUE DESEJA SER RETORNADA
+               </remarks>
+             
+             <response code = "200">Retornado quando os daodos são adicionados com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EntregaController.DeleteEntrega(System.Int32)">
+            <summary>
+            Deleta  um registro especifico do banco de dados
+            </summary>
+            <remarks>
+            O item do id inserido será deletado para sempre sem possibilidade de recuperaçao, tome cuidado
+            </remarks>
+            <response  code="200">Retorna uma mensagem de que foi excluído com sucesso.</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EpiController.GetEpis">
+            <summary>
+             Retorna todos dados da EPIs registradas
+            </summary>
+            <remarks>
+             Exemplo de retorno:
+             {
+               "idEpi": 0, ----> ID da EPI registrada,
+               "nomeEpi: "string", -- > Nome da EPI
+               "instrucoes": "string", --> Instruções para o usuário utilizar
+               "qtd": 0, --> Quantidade de unidades disponíveis da EPI
+             }
+             </remarks>
+            
+            <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EpiController.GetEpi(System.Int32)">
+            <summary>
+             Retorna o dados do id especificado da EPI
+            </summary>
+            <remarks>
+             Exemplo de retorno:
+             {
+               "idEpi": 0, ----> ID da EPI registrada  (mesmo que tenha sido passado no parametro)
+               "nomeEpi: "string", -- > Nome da EPI
+               "instrucoes": "string", --> Instruções para o usuário utilizar
+               "qtd": 0, --> Quantidade de unidades disponíveis da EPI
+             }
+             COLOQUE NO CAMPO {ID}  O ID DA EPI QUE DESEJA BUSCAR
+             </remarks>
+            
+            <response code = "200">Retornado quando a requisição é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EpiController.PutEpi(System.Int32,API_SAFEGUARD.Models.Epi)">
+            <summary>
+             Modifica e atualiza as informações do EPI do id inserido
+            </summary>
+            <remarks>
+             Exemplo de estrutura pra atualizar:
+             {
+               "idEpi": 0, ----> informação do tipo numerico inserir o id da EPI que for alterar no banco de dados
+               "nomeEpi: "string", -- > informação do tipo string do nome da EPI
+               "instrucoes": "string", --> informação do tipo string Instruções para o usuário utilizar
+               "qtd": 0, --> informação do tipo numerico da quantidade de unidades disponíveis da EPI
+             } </remarks>
+            
+            <response code = "200">Retornado quando a atualização é feita com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EpiController.PostEpi(API_SAFEGUARD.Models.Epi)">
+            <summary>
+              Adiciona um novo dado no banco de dados 
+             </summary>
+             <remarks>
+              Exemplo de estrutura pra adicionar:
+              {
+                "idEpi": 0, ----> informação do tipo numerico, inserir um id não existente ou deixar vazio
+                "nomeEpi: "string", -- > informação do tipo string do nome da EPI
+                "instrucoes": "string", --> informação do tipo string Instruções para o usuário utilizar
+                "qtd": 0, --> informação do tipo numerico da quantidade de unidades disponíveis da EPI
+              }
+              </remarks>
+             
+             <response code = "200">Retornado quando os dados são adicionados com sucesso</response>
+        </member>
+        <member name="M:API_SAFEGUARD.Controllers.EpiController.DeleteEpi(System.Int32)">
+            <summary>
+            Deleta  um registro especifico do banco de dados
+            </summary>
+            <remarks>
+            O item do id inserido será deletado para sempre sem possibilidade de recuperaçao, tome cuidado
+            </remarks>
+            <response  code="200">Retorna uma mensagem de que foi excluído com sucesso.</response>
+        </member>
+    </members>
+</doc>
