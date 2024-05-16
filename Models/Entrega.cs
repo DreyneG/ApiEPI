@@ -18,8 +18,8 @@ public partial class Entrega
 
     [JsonIgnore]
 
-    public virtual Colaborador IdColaboradorNavigation { get; set; } = null!;
+    public virtual Colaborador? IdColaboradorNavigation { get; set; }
     [JsonIgnore]
 
-    public virtual Epi IdEpiNavigation { get; set; } = null!;
+    public virtual Epi? IdEpiNavigation { get; set; }
 }
