@@ -241,5 +241,17 @@
             </remarks>
             <response  code="200">Retorna uma mensagem de que foi excluído com sucesso.</response>
         </member>
+        <member name="T:APISAFEGUARD.Migrations.identity">
+            <inheritdoc />
+        </member>
+        <member name="M:APISAFEGUARD.Migrations.identity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:APISAFEGUARD.Migrations.identity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:APISAFEGUARD.Migrations.identity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

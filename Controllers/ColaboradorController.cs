@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_SAFEGUARD.Context;
 using API_SAFEGUARD.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_SAFEGUARD.Controllers
 {
@@ -39,6 +40,7 @@ namespace API_SAFEGUARD.Controllers
         /// <response code = "200">Retornado quando a requisição é feita com sucesso</response>
         // GET: api/Colaborador
         [HttpGet]
+        [Authorize("Admin")]
         public async Task<ActionResult<IEnumerable<Colaborador>>> GetColaboradors()
         {
             if (_context.Colaboradors == null)
@@ -67,6 +69,7 @@ namespace API_SAFEGUARD.Controllers
 
         // GET: api/Colaborador/5
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Colaborador>> GetColaborador(int id)
         {
             if (_context.Colaboradors == null)
@@ -104,6 +107,7 @@ namespace API_SAFEGUARD.Controllers
         // PUT: api/Colaborador/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+          [Authorize]
         public async Task<IActionResult> PutColaborador(int id, Colaborador colaborador)
         {
             if (id != colaborador.IdColaborador)
@@ -155,6 +159,7 @@ namespace API_SAFEGUARD.Controllers
         // POST: api/Colaborador
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+          [Authorize("Admin")]
         public async Task<ActionResult<Colaborador>> PostColaborador(Colaborador colaborador)
         {
             if (_context.Colaboradors == null)
@@ -174,6 +179,7 @@ namespace API_SAFEGUARD.Controllers
 
         // DELETE: api/Colaborador/5
         [HttpDelete("{id}")]
+          [Authorize]
         public async Task<IActionResult> DeleteColaborador(int id)
         {
             if (_context.Colaboradors == null)

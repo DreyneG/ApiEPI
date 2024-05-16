@@ -280,3 +280,7 @@ C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\obj\Debug\net7.0\API-SAFEGUARD.ge
 C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\obj\Debug\net7.0\ref\API-SAFEGUARD.dll
 C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\bin\Debug\net7.0\API-SAFEGUARD.xml
 C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\obj\Debug\net7.0\API-SAFEGUARD.xml
+C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\bin\Debug\net7.0\API-SAFEGUARD.staticwebassets.runtime.json
+C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Aluno Dev\Documents\Dev\API-SAFEGUARD\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll

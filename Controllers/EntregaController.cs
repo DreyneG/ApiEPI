@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_SAFEGUARD.Context;
 using API_SAFEGUARD.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_SAFEGUARD.Controllers
 {
@@ -36,6 +37,7 @@ namespace API_SAFEGUARD.Controllers
         /// <response code = "200">Retornado quando a requisição é feita com sucesso</response>
         // GET: api/Entrega
         [HttpGet]
+          [Authorize]
         public async Task<ActionResult<IEnumerable<Entrega>>> GetEntregas()
         {
             if (_context.Entregas == null)
@@ -64,6 +66,7 @@ namespace API_SAFEGUARD.Controllers
 
         // GET: api/Entrega/5
         [HttpGet("{id}")]
+          [Authorize]
         public async Task<ActionResult<Entrega>> GetEntrega(int id)
         {
             if (_context.Entregas == null)
@@ -100,6 +103,7 @@ namespace API_SAFEGUARD.Controllers
         // PUT: api/Entrega/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+          [Authorize("Admin")]
         public async Task<IActionResult> PutEntrega(int id, Entrega entrega)
         {
             if (id != entrega.IdEntrega)
@@ -148,6 +152,7 @@ namespace API_SAFEGUARD.Controllers
         // POST: api/Entrega
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+          [Authorize("Admin")]
         public async Task<ActionResult<Entrega>> PostEntrega(Entrega entrega)
         {
             if (_context.Entregas == null)
@@ -168,6 +173,7 @@ namespace API_SAFEGUARD.Controllers
         /// <response  code="200">Retorna uma mensagem de que foi excluído com sucesso.</response>
         // DELETE: api/Entrega/5
         [HttpDelete("{id}")]
+          [Authorize("Admin")]
         public async Task<IActionResult> DeleteEntrega(int id)
         {
             if (_context.Entregas == null)

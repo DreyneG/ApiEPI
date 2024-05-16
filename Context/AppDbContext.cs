@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using API_SAFEGUARD.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_SAFEGUARD.Context;
 
-public partial class AppDbContext : DbContext
+public partial class AppDbContext : IdentityDbContext<ApplicationUser>
 {
-    public AppDbContext()
-    {
-    }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -107,7 +106,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Qtd).HasColumnName("qtd");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        base.OnModelCreating(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
